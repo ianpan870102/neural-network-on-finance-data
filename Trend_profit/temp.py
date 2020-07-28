@@ -12,15 +12,12 @@ from matplotlib.pyplot import figure
 from datetime import timedelta, date
 
 
-
-
 def date_range(start_date, end_date):
-    for n in range(int ((end_date - start_date).days)):
-        yield start_date + timedelta(n)
+  for n in range(int((end_date - start_date).days)):
+    yield start_date + timedelta(n)
 
 
-
-task = pd.read_csv("task.csv") 
+task = pd.read_csv("task.csv")
 
 conn = psycopg2.connect(**eval(open('auth.txt').read()))
 cmd = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -29,10 +26,9 @@ start_date = date(2010, 8, 1)
 end_date = date(2010, 9, 1)
 
 for single_date in date_range(start_date, end_date):
-    print(single_date)
+  print(single_date)
 
 # for index, row in task.iterrows():
-
 
 #     data_set = int(task['data_set'][index])
 
@@ -54,7 +50,6 @@ for single_date in date_range(start_date, end_date):
 #     valid_y = [np.where(r==1)[0][0] for r in valid_y]
 #     test_y = [np.where(r==1)[0][0] for r in test_y]
 
-
 #     print('Running experiment {}'.format(task_id))
 
 #     # 0:init
@@ -62,16 +57,4 @@ for single_date in date_range(start_date, end_date):
 #     # 2:down
 #     state = 0
 
-    #for i in test_y: 
-
-
-
-
-
-   
-
-
-
-
-
-
+#for i in test_y:
